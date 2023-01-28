@@ -17,8 +17,8 @@ export default function Counter() {
             </div>
             <div className="options">
                 <input type="number" value={ amount } onChange={ (e) => setAmount(+e.target.value) }/>
-                <button onClick={ () => dispatch(incrementByAmount(amount)) }>Add Amount</button>            
-                <button onClick={ () => dispatch(incrementAsync(amount)) }>Add Amount (Async)</button>
+                <button className="incrementByAmount" onClick={ () => dispatch(incrementByAmount(amount)) }>Add Amount</button>            
+                <button className="incrementAsync" onClick={ () => dispatch(incrementAsync(amount)) }>Add Amount (Async)</button>
             </div>
         </>
     );

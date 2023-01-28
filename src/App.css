@@ -15,6 +15,17 @@ button {
     box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
     font-family: inherit;
     font-size: 1.5rem;
+
+    transition: transform 0.2s, box-shadow 0.8s;
+    cursor: pointer;
+}
+
+button:hover {
+    transform: scale(0.99);
+}
+button:active {
+    transform: scale(0.96);
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
 }
 
 .container {
@@ -27,11 +38,52 @@ button {
 }
 
 .main-counter {
+    width: 400px;
+}
+
+.main-counter, .options {
     display: flex;
-    place-items: center;   
+    justify-content: center;  
+    align-items: center;
     gap: 30px;
 }
 
 .main-counter > p {
-    font-size: 20px;
+    font-size: 2rem;
+    width: 80px;
+    text-align: center;
+}
+
+.options {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+
+.options > input {
+    grid-column: 1 / 3;
+    grid-row: 1 / 2;
+
+    padding: 10px;
+    font-size: 1.5rem;
+    border-radius: 10px;
+
+    border: none;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
+}
+
+input:focus {
+    outline: none;
+}
+
+.options > .incrementByAmount {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+    justify-self: stretch;
+}
+
+.options > .incrementAsync {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+    justify-self: stretch;
 }
